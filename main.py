@@ -9,13 +9,13 @@ def show_score():
     if len(attemptslist) <= 0:
         print('There is no highscore')
     else:
-        print('The current HS is {}'.format(min(attempts_list)))
+        print(f'The current HS is {min(attemptslist)}')
 
 def start_game():
     random_number = int(random.randint(1, 10))
     print('Hello there. Welcome to the number guessing game.')
     player_name = input('what is your name?')
-    wanna_play = input('Hi, {}, wanna play the game (yes/no)'.format(player_name))
+    wanna_play = input(f'Hi, {player_name}, wanna play the game (yes/no)')
     """
     """
     attempts = 0 
@@ -29,7 +29,7 @@ def start_game():
             if int(guess) == random_number:
                 print('Good Job! You Got It!')
                 attempts += 1
-                print('IT took you {} attempts'.format(attempts))
+                print(f'It took you {attempts} attempt')
                 play_again = input('Wanna go again? (yes/no)')
                 
                 attempts = 0
@@ -45,7 +45,7 @@ def start_game():
                 attempts += 1
         except ValueError as err:
             print('Pass in a valid value')
-            print('({})'.format(err))
+            print(err)
     else:
         print('Goodbye')
 if __name__ == '__main__':
